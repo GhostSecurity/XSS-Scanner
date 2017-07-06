@@ -1,5 +1,15 @@
 # XSS Scanner
-
+import requests
+from datetime import datetime
+import os
+import httplib
+import colorama
+import time
+import urllib2
+import sys
+from termcolor import colored
+from colorama import Fore, Back, Style
+colorama.init()
 
 def check_for_update():
     admin_github_url = "https://github.com/HydraBoy/XSS-Scanner"
