@@ -31,7 +31,6 @@ def Welcome():
 
 def check_for_update():
     admin_github_url = "https://github.com/HydraBoy/XSS-Scanner"
-    keyword = "ADMIN_FINDER_VERSION = '"
     updated = False
     print "\n[*] Checking for XSS-Scanner updates.."
     time.sleep(1)
