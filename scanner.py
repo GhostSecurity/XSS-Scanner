@@ -7,6 +7,7 @@ import httplib
 import colorama
 import time
 import urllib2
+import urllib
 import platform
 import sys
 from termcolor import colored
@@ -43,7 +44,8 @@ def check_for_update():
             print '[#] No updates available.'
         else:
             print '[+] Updating XSS-Scanner Tool...'
-            subprocess.call("git pull "+ admin_github_url,shell=True)
+            os.popen('rm -rf .version.txt')
+            urllib.urlretrieve("https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/.version.txt",".version.txt")
             print '[+] XSS Scanner Updated To Version: ' + content
             updated = True
     except Exception as ex:
