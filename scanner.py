@@ -22,10 +22,9 @@ def Welcome():
     print (Fore.GREEN+"""
     ################################
     #                              #
-    #    Brute Force Admin Page    #
-    #              &               #
-    #         Admin Finder         #
-    #      Creator : HydraBoy      #
+    #         XSS Scanner          #
+    #                              #
+    #     Ghost Security Team      #
     #                              #
     ################################
     """)
