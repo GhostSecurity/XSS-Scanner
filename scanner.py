@@ -49,6 +49,7 @@ def check_for_update():
             print '[+] XSS Scanner Updated To Version: ' + content
             updated = True
     except Exception as ex:
+        print ex
         print "\n[!] Problem while updating."
     if updated:
         sys.exit(Fore.GREEN+"[!] Plase Relaunch The Script.")
