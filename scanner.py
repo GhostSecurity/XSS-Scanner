@@ -2,6 +2,7 @@
 import requests
 from time import gmtime, strftime
 import os
+import subprocess
 import httplib
 import colorama
 import time
@@ -42,7 +43,7 @@ def check_for_update():
             print '[#] No updates available.'
         else:
             print '[+] Updating XSS-Scanner Tool...'
-            os.popen("git pull "+ admin_github_url)
+            subprocess.call("git pull "+ admin_github_url,shell=True)
             print '[+] XSS Scanner Updated To Version: ' + content
             updated = True
     except Exception as ex:
