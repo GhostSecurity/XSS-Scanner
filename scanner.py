@@ -36,7 +36,7 @@ def Welcome():
 def check_for_update():
     admin_github_url = "https://github.com/HydraBoy/XSS-Scanner"
     updated = False
-    print "\n[*] Checking for XSS-Scanner updates.."
+    print(Fore.GREEN+"[{}] [UPDATE] 'Checking For Updates And Debuging...'".format(strftime("%H:%M:%S", gmtime())))
     time.sleep(1)
     try:
         http = urllib2.urlopen('https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/.version.txt',data=None)
@@ -46,8 +46,10 @@ def check_for_update():
         scanner = open('scanner.py','r').read()
         read = open('.version.txt','r').read()
         if read == content:
-            print '[#] No updates available.'
+            print(Fore.GREEN+"[{}] [UP-TO-DATA] 'No available updates...'".format(strftime("%H:%M:%S", gmtime())))
             if scanner != reader:
+                print(Fore.GREEN+"[{}] [DEBUG] 'Debuging Detected...'".format(strftime("%H:%M:%S", gmtime())))
+                time.sleep(1)
                 print(Fore.GREEN+"[{}] [DEBUG] 'Debuging XSS-Scanner Tool...'".format(strftime("%H:%M:%S", gmtime())))
                 os.popen('rm -rf scanner.py')
                 urllib.urlretrieve("https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/scanner.py","scanner.py")
