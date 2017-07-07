@@ -117,7 +117,7 @@ while 1:
         else:
             XSSFind(urls)
     except (KeyboardInterrupt, SystemExit):
-        exit(Fore.YELLOW+"[{}] [GAME OVER] 'GOOD LUCK ;)'".format(strftime("%H:%M:%S", gmtime())))
+        exit(Fore.YELLOW+"\n[{}] [GAME OVER] 'GOOD LUCK ;)'".format(strftime("%H:%M:%S", gmtime())))
     except IOError as err:
         if 'No such file or directory:' in str(err):
             print(Fore.YELLOW+"[{}] [ERROR] 'INVALID FILE NAME'".format(strftime("%H:%M:%S", gmtime())))
