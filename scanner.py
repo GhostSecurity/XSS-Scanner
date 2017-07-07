@@ -24,15 +24,12 @@ def clear():
         subprocess.call("clear",shell=True)
 
 def Welcome():
-    print (Fore.GREEN+"""
-    ################################
-    #                              #
-    #         XSS Scanner          #
-    #                              #
-    #     Ghost Security Team      #
-    #                              #
-    ################################
-    """)
+    print(Fore.GREEN+"__  ______ ____    ____                                  ")
+    print(Fore.GREEN+"\ \/ / ___/ ___|  / ___|  ___ __ _ _ __  _ __   ___ _ __ ")
+    print(Fore.GREEN+" \  /\___ \___ \  \___ \ / __/ _` | '_ \| '_ \ / _ \ '__|")
+    print(Fore.GREEN+" /  \ ___) |__) |  ___) | (_| (_| | | | | | | |  __/ |   ")
+    print(Fore.GREEN+"/_/\_\____/____/  |____/ \___\__,_|_| |_|_| |_|\___|_|   ")
+    print(Fore.GREEN+"                                                         ")
 
 def check_for_update():
     admin_github_url = "https://github.com/HydraBoy/XSS-Scanner"
