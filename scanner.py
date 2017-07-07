@@ -108,7 +108,7 @@ Welcome()
 check_for_update()
 while 1:
     try:
-        urls = raw_input(Fore.RED+"\nEnter URL(s) TXT file\n>>> ")
+        urls = raw_input(Fore.RED+"[{}] [INPUT] [ENTER FILE NAME]: ".format(strftime("%H:%M:%S", gmtime()))
         if urls == "":
             print(Fore.YELLOW+"\n[{}] [ERROR] 'PLASE ENTER TXT FILE NAME'".format(strftime("%H:%M:%S", gmtime())))
         elif open(urls).read() == "":
@@ -116,7 +116,7 @@ while 1:
         else:
             XSSFind(urls)
     except (KeyboardInterrupt, SystemExit):
-        exit(Fore.YELLOW+"\n\n[{}] [GAME OVER] 'GOOD LUCK ;)'\n".format(strftime("%H:%M:%S", gmtime())))
+        exit(Fore.YELLOW+"\n[{}] [GAME OVER] 'GOOD LUCK ;)'\n".format(strftime("%H:%M:%S", gmtime())))
     except IOError as err:
         if 'No such file or directory:' in str(err):
-            print(Fore.YELLOW+"\n\n[{}] [ERROR] 'INVALID FILE NAME'".format(strftime("%H:%M:%S", gmtime())))
+            print(Fore.YELLOW+"\n[{}] [ERROR] 'INVALID FILE NAME'".format(strftime("%H:%M:%S", gmtime())))
