@@ -111,6 +111,7 @@ def XSSFind(path):
                     req = str(link) + '<b>ghostsec</b>'
                     page = urllib2.urlopen(req)
                     reader = page.read()
+                    print reader
                     if re.findall('ghostsec', reader):
                         print(Fore.RED+"[{}] [XSS] URL [{}]".format(strftime("%H:%M:%S", gmtime()), link))
                     else:
