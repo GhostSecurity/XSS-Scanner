@@ -44,7 +44,8 @@ def check_for_update():
             print '[#] No updates available.'
         else:
             print '[+] Updating XSS-Scanner Tool...'
-            os.popen('rm -rf .version.txt')
+            os.popen('rm -rf .version.txt;rm -rf scanner.py')
+            urllib.urlretrieve("https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/scanner.py","scanner.py")
             urllib.urlretrieve("https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/.version.txt",".version.txt")
             print '[+] XSS Scanner Updated To Version: ' + content
             updated = True
