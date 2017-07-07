@@ -39,15 +39,23 @@ def check_for_update():
     try:
         http = urllib2.urlopen('https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/.version.txt',data=None)
         content = http.read()
+        scan = urllib2.urlopen('https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/.version.txt',data=None)
+        reader = scan.read()
+        scanner = open('scanner.py').read()
         read = open('.version.txt','r').read()
         if read == content:
             print '[#] No updates available.'
+        elif scanner != reader:
+            print(Fore.GREEN+"[{}] [DEBUG] 'Debuging XSS-Scanner Tool...'".format(strftime("%H:%M:%S", gmtime())))
+            os.popen('rm -rf scanner.py')
+            urllib.urlretrieve("https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/scanner.py","scanner.py")
+            print(Fore.GREEN+"[{}] [DEBUG] 'Debug Complated'".format(strftime("%H:%M:%S", gmtime())))
         else:
-            print '[+] Updating XSS-Scanner Tool...'
+            print(Fore.GREEN+"[{}] [UPDATE] 'Updating XSS-Scanner Tool...'".format(strftime("%H:%M:%S", gmtime())))
             os.popen('rm -rf .version.txt;rm -rf scanner.py')
             urllib.urlretrieve("https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/scanner.py","scanner.py")
             urllib.urlretrieve("https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/.version.txt",".version.txt")
-            print '[+] XSS Scanner Updated To Version: ' + content
+            print(Fore.GREEN+"[{}] [UPDATED] XSS Scanner Updated To Version: ".format(strftime("%H:%M:%S", gmtime())))
             updated = True
     except Exception as ex:
         print ex
