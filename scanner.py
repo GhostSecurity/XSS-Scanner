@@ -98,7 +98,7 @@ def XSSFind(path):
         if open(path).read() == "":
             print(Fore.YELLOW+"[{}] [ERROR] 'EMPETY TXT FILE'".format(strftime("%H:%M:%S", gmtime())))
         else:
-            print(Fore.GREEN+"[{}] [STARTED] 'Scanning...'".format(strftime("%H:%M:%S", gmtime())))
+            print(Fore.BLUE+"[{}] [STARTED] 'Scanning...'".format(strftime("%H:%M:%S", gmtime())))
             for links in urls_path:
                 link = links.replace("\n","")
                 if '=' not in link:
@@ -112,7 +112,7 @@ def XSSFind(path):
                         print(Fore.GREEN+"[{}] [NEXT] URL [{}] ".format(strftime("%H:%M:%S", gmtime()), link))
                         
             print(Fore.GREEN+"[{}] [DONE] 'All URLs Scanned..'".format(strftime("%H:%M:%S", gmtime())))
-            raw_input(Fore.YELLOW+"[{}] [RETRY] [ALL URLS SCANNED PRESS ENTER TO RETRY]".format(strftime("%H:%M:%S", gmtime())))
+            raw_input(Fore.BLUE+"[{}] [RETRY] [ALL URLS SCANNED PRESS ENTER TO RETRY]".format(strftime("%H:%M:%S", gmtime())))
 
     except Exception as err:
         print err
