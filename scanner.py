@@ -93,7 +93,7 @@ def XSSFind(path):
                 else:
                     _GET = urllib2.urlopen('{}"<b> Ghost Security </b>'.format(link))
                     content = _GET.read()
-                    if 'Ghost Security' in content:
+                    if 'Ghost Security'.lower() in content:
                         print(Fore.RED+"[{}] [XSS] URL [{}]".format(strftime("%H:%M:%S", gmtime()), link))
                     else:
                         print(Fore.GREEN+"[{}] [NEXT] URL [{}] ".format(strftime("%H:%M:%S", gmtime()), link))
