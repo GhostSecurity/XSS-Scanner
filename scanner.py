@@ -69,7 +69,7 @@ def check_for_update():
         sys.exit(Fore.GREEN+"[{}] [RELAUNCH] 'Plase Relaunch The Script.'".format(strftime("%H:%M:%S", gmtime())))
 
 
-# Check If URL in available URL.
+# Check If URL is available URL.
 
 
 def IsUrl(url):
@@ -122,8 +122,10 @@ Welcome()
 check_for_update()
 while 1:
     try:
-        urls = raw_input(Fore.RED+"[{}] [INPUT] [ENTER FILE NAME]: ".format(strftime("%H:%M:%S", gmtime())))
-        if urls == "":
+        urls = raw_input(Fore.RED+"[{}] [INPUT] [ENTER FILE NAME]: [default: (xss)]".format(strftime("%H:%M:%S", gmtime())))
+        if urls == "xss":
+            XSSFind('xss-urls.txt')
+        elif urls == "":
             print(Fore.YELLOW+"[{}] [ERROR] 'PLASE ENTER TXT FILE NAME'".format(strftime("%H:%M:%S", gmtime())))
         elif open(urls).read() == "":
             print(Fore.YELLOW+"[{}] [ERROR] 'EMPETY TXT FILE'".format(strftime("%H:%M:%S", gmtime())))
