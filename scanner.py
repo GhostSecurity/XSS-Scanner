@@ -5,6 +5,7 @@ import requests
 from time import gmtime, strftime
 import os
 import subprocess
+import re
 import httplib
 import colorama
 import time
@@ -106,13 +107,13 @@ def XSSFind(path):
                 else:
                     _GET = urllib2.urlopen('%s"<b>ghostsec</b>' % (link))
                     content = _GET.read()
-                    if 'ghostsec' in str(content) or '"ghostsec' in str(content):
+                    if re.findall("ghostsec", content):
                         print(Fore.RED+"[{}] [XSS] URL [{}]".format(strftime("%H:%M:%S", gmtime()), link))
                     else:
                         print(Fore.GREEN+"[{}] [NEXT] URL [{}] ".format(strftime("%H:%M:%S", gmtime()), link))
                         
-            print(Fore.GREEN+"[{}] [DONE] 'All URLs Scanned..'".format(strftime("%H:%M:%S", gmtime())))
-            raw_input(Fore.BLUE+"[{}] [RETRY] [ALL URLS SCANNED PRESS ENTER TO RETRY]".format(strftime("%H:%M:%S", gmtime())))
+            print(Fore.BLUE+"[{}] [DONE] 'All URLs Scanned..'".format(strftime("%H:%M:%S", gmtime())))
+            raw_input(Fore.YELLOW+"[{}] [RETRY] [ALL URLS SCANNED PRESS ENTER TO RETRY]".format(strftime("%H:%M:%S", gmtime())))
 
     except Exception as err:
         print err
@@ -122,7 +123,7 @@ Welcome()
 check_for_update()
 while 1:
     try:
-        urls = raw_input(Fore.RED+"[{}] [INPUT] [ENTER FILE NAME]: [default: (xss)]".format(strftime("%H:%M:%S", gmtime())))
+        urls = raw_input(Fore.RED+"[{}] [INPUT] [ENTER FILE NAME] [default: (xss)]: ".format(strftime("%H:%M:%S", gmtime())))
         if urls == "xss":
             XSSFind('xss-urls.txt')
         elif urls == "":
