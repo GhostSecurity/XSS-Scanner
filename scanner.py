@@ -18,7 +18,7 @@ def clear():
     if platform.system() == 'Windows':
         os.popen("cls")
     else:
-        subprocess.call("clear",shell=True).read()
+        subprocess.call("clear",shell=True)
 
 def Welcome():
     print (Fore.GREEN+"""
