@@ -1,4 +1,4 @@
-# XSS Scanner Created By Ghost Security Team
+# XSS Scanner Created By Ghost Security Team VER 1.0
 import requests
 from time import gmtime, strftime
 import os
