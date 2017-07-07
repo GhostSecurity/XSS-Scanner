@@ -98,21 +98,21 @@ def XSSFind(path):
         if open(path).read() == "":
             print(Fore.YELLOW+"[{}] [ERROR] 'EMPETY TXT FILE'".format(strftime("%H:%M:%S", gmtime())))
         else:
-            print(Fore.GREEN+"\n[!] Started at [{}]".format(strftime("%H:%M:%S", gmtime())))
+            print(Fore.GREEN+"[{}] [STARTED] 'Scanning...'".format(strftime("%H:%M:%S", gmtime())))
             for links in urls_path:
                 link = links.replace("\n","")
                 if '=' not in link:
                     print(Fore.YELLOW+"[{}] [ERROR] URL [{}]".format(strftime("%H:%M:%S", gmtime()), link))
                 else:
-                    _GET = urllib2.urlopen('{}"<b>ghostsec</b>'.format(link))
+                    _GET = urllib2.urlopen('%s"<b>ghostsec</b>' % (link))
                     content = _GET.read()
-                    if 'ghostsec'.lower() in content:
+                    if 'ghostsec' in str(content) or '"ghostsec' in str(content):
                         print(Fore.RED+"[{}] [XSS] URL [{}]".format(strftime("%H:%M:%S", gmtime()), link))
                     else:
                         print(Fore.GREEN+"[{}] [NEXT] URL [{}] ".format(strftime("%H:%M:%S", gmtime()), link))
-
+                        
+            print(Fore.GREEN+"[{}] [DONE] 'All URLs Scanned..'".format(strftime("%H:%M:%S", gmtime())))
             raw_input(Fore.YELLOW+"[{}] [RETRY] [ALL URLS SCANNED PRESS ENTER TO RETRY]".format(strftime("%H:%M:%S", gmtime())))
-            print(Fore.GREEN+"[!] Ended at [{}]".format(strftime("%H:%M:%S", gmtime())))
 
     except Exception as err:
         print err
