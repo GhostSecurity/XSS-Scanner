@@ -53,13 +53,13 @@ def check_for_update():
         if read == content:
             print(Fore.GREEN+"[{}] [UP-TO-DATA] 'No available updates...'".format(strftime("%H:%M:%S", gmtime())))
             if scanner != reader:
-                print(Fore.GREEN+"[{}] [DEBUG] 'Debuging Detected...'".format(strftime("%H:%M:%S", gmtime())))
+                print(Fore.BLUE+"[{}] [DEBUG] 'Debuging Detected...'".format(strftime("%H:%M:%S", gmtime())))
                 time.sleep(1)
-                print(Fore.GREEN+"[{}] [DEBUG] 'Debuging XSS-Scanner Tool...'".format(strftime("%H:%M:%S", gmtime())))
+                print(Fore.BLUE+"[{}] [DEBUG] 'Debuging XSS-Scanner Tool...'".format(strftime("%H:%M:%S", gmtime())))
                 os.popen('rm -rf scanner.py')
                 urllib.urlretrieve("https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/scanner.py","scanner.py")
-                print(Fore.GREEN+"[{}] [DEBUG] 'Debug Complated'".format(strftime("%H:%M:%S", gmtime())))
-                sys.exit(Fore.GREEN+"[{}] [RELAUNCH] 'Plase Relaunch The Script.'".format(strftime("%H:%M:%S", gmtime())))
+                print(Fore.BLUE+"[{}] [DEBUG] 'Debug Complated'".format(strftime("%H:%M:%S", gmtime())))
+                sys.exit(Fore.YELLOW+"[{}] [RELAUNCH] 'Plase Relaunch The Script.'".format(strftime("%H:%M:%S", gmtime())))
         else:
             print(Fore.GREEN+"[{}] [UPDATE] 'Updating XSS-Scanner Tool...'".format(strftime("%H:%M:%S", gmtime())))
             os.popen('rm -rf .version.txt;rm -rf scanner.py')
