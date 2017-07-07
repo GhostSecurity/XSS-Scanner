@@ -1,4 +1,4 @@
-# XSS Scanner Created By Ghost Security Team VER 1.0
+# XSS Scanner Created By Ghost Security Team
 import requests
 from time import gmtime, strftime
 import os
@@ -45,11 +45,12 @@ def check_for_update():
         read = open('.version.txt','r').read()
         if read == content:
             print '[#] No updates available.'
-        elif scanner != reader:
-            print(Fore.GREEN+"[{}] [DEBUG] 'Debuging XSS-Scanner Tool...'".format(strftime("%H:%M:%S", gmtime())))
-            os.popen('rm -rf scanner.py')
-            urllib.urlretrieve("https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/scanner.py","scanner.py")
-            print(Fore.GREEN+"[{}] [DEBUG] 'Debug Complated'".format(strftime("%H:%M:%S", gmtime())))
+            if scanner != reader:
+                print(Fore.GREEN+"[{}] [DEBUG] 'Debuging XSS-Scanner Tool...'".format(strftime("%H:%M:%S", gmtime())))
+                os.popen('rm -rf scanner.py')
+                urllib.urlretrieve("https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/scanner.py","scanner.py")
+                print(Fore.GREEN+"[{}] [DEBUG] 'Debug Complated'".format(strftime("%H:%M:%S", gmtime())))
+                sys.exit(Fore.GREEN+"[{}] [RELAUNCH] 'Plase Relaunch The Script.'".format(strftime("%H:%M:%S", gmtime())))
         else:
             print(Fore.GREEN+"[{}] [UPDATE] 'Updating XSS-Scanner Tool...'".format(strftime("%H:%M:%S", gmtime())))
             os.popen('rm -rf .version.txt;rm -rf scanner.py')
@@ -61,7 +62,7 @@ def check_for_update():
         print ex
         print "\n[!] Problem while updating."
     if updated:
-        sys.exit(Fore.GREEN+"[!] Plase Relaunch The Script.")
+        sys.exit(Fore.GREEN+"[{}] [RELAUNCH] 'Plase Relaunch The Script.'".format(strftime("%H:%M:%S", gmtime())))
 
 
 # Check If URL in available URL.
