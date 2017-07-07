@@ -39,7 +39,7 @@ def check_for_update():
     try:
         http = urllib2.urlopen('https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/.version.txt',data=None)
         content = http.read()
-        scan = urllib2.urlopen('https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/.version.txt',data=None)
+        scan = urllib2.urlopen('https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/scanner.py',data=None)
         reader = scan.read()
         scanner = open('scanner.py').read()
         read = open('.version.txt','r').read()
