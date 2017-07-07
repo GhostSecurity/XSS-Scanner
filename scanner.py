@@ -24,17 +24,17 @@ def clear():
         subprocess.call("clear",shell=True)
 
 def Welcome():
-    print(Fore.GREEN+"---------------------------------------------------------")
-    print(Fore.GREEN+"__  ______ ____    ____                                  ")
-    print(Fore.GREEN+"\ \/ / ___/ ___|  / ___|  ___ __ _ _ __  _ __   ___ _ __ ")
-    print(Fore.GREEN+" \  /\___ \___ \  \___ \ / __/ _` | '_ \| '_ \ / _ \ '__|")
-    print(Fore.GREEN+" /  \ ___) |__) |  ___) | (_| (_| | | | | | | |  __/ |   ")
-    print(Fore.GREEN+"/_/\_\____/____/  |____/ \___\__,_|_| |_|_| |_|\___|_|   ")
-    print(Fore.GREEN+"                      Enjoy it!                          ")
-    print(Fore.BULE+"---------------------------------------------------------")
-    print(Fore.RED+"             Created By - GhostSecurity Team              ")
-    print(Fore.RED+"             Contact Us: http://ghost-sec.org             ")
-    print(Fore.BLUE+"---------------------------------------------------------")
+    print(Fore.GREEN+"+---------------------------------------------------------+")
+    print(Fore.GREEN+"| __  ______ ____    ____                                   |")
+    print(Fore.GREEN+"| \ \/ / ___/ ___|  / ___|  ___ __ _ _ __  _ __   ___ _ __  |")
+    print(Fore.GREEN+"|  \  /\___ \___ \  \___ \ / __/ _` | '_ \| '_ \ / _ \ '__| |")
+    print(Fore.GREEN+"|  /  \ ___) |__) |  ___) | (_| (_| | | | | | | |  __/ |    |")
+    print(Fore.GREEN+"| /_/\_\____/____/  |____/ \___\__,_|_| |_|_| |_|\___|_|    |")
+    print(Fore.GREEN+"|                       Enjoy it!                           |")
+    print(Fore.BLUE+" +-----------------------------------------------------------+")
+    print(Fore.RED+"  |           Created By - GhostSecurity Team                 |")
+    print(Fore.RED+"  |           Contact Us: http://ghost-sec.org                |")
+    print(Fore.BLUE+"+------------------------------------------------------------+")
     print("\n")
 
 def check_for_update():
