@@ -105,13 +105,9 @@ def XSSFind(path):
                 if '=' not in link:
                     print(Fore.YELLOW+"[{}] [ERROR] URL [{}]".format(strftime("%H:%M:%S", gmtime()), link))
                 else:
-                    import urllib2
-                    user_agent = 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-US) AppleWebKit/534.3 (KHTML, like Gecko) Chrome/6.0.472.63 Safari/534.3'
-                    headers = { 'User-Agent' : user_agent }
-                    req = urllib2.Request('{}"<b>ghostsec</b>'.format(link), None, headers)
-                    response = urllib2.urlopen(req)
-                    reader = response.read()
-                    #reader = page.read()
+                    req = str(link) + '"<b>ghostsec</b>'
+                    page = urllib2.urlopen(req)
+                    reader = page.read()
                     if re.findall('(ghostsec|"ghostsec)', reader):
                         print(Fore.RED+"[{}] [XSS] URL [{}]".format(strftime("%H:%M:%S", gmtime()), link))
                     else:
