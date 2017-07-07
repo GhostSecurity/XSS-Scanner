@@ -105,9 +105,9 @@ def XSSFind(path):
                 if '=' not in link:
                     print(Fore.YELLOW+"[{}] [ERROR] URL [{}]".format(strftime("%H:%M:%S", gmtime()), link))
                 else:
-                    _GET = urllib2.urlopen('%s"<b>ghostsec</b>' % (link))
-                    content = _GET.read()
-                    if re.findall("ghostsec", content):
+                    scan = urllib2.urlopen('{}"<b>ghostsec</b>',data=None)
+                    reader = scan.read()
+                    if re.findall('(ghostsec|"ghostsec)', reader):
                         print(Fore.RED+"[{}] [XSS] URL [{}]".format(strftime("%H:%M:%S", gmtime()), link))
                     else:
                         print(Fore.GREEN+"[{}] [NEXT] URL [{}] ".format(strftime("%H:%M:%S", gmtime()), link))
