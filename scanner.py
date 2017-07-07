@@ -109,7 +109,7 @@ Welcome()
 check_for_update()
 while 1:
     try:
-        urls = raw_input(Fore.RED+"[{}] [INPUT] [ENTER FILE NAME]: ".format(strftime("%H:%M:%S", gmtime()))
+        urls = raw_input(Fore.RED+"[{}] [INPUT] [ENTER FILE NAME]: ".format(strftime("%H:%M:%S", gmtime())))
         if urls == "":
             print(Fore.YELLOW+"\n[{}] [ERROR] 'PLASE ENTER TXT FILE NAME'".format(strftime("%H:%M:%S", gmtime())))
         elif open(urls).read() == "":
