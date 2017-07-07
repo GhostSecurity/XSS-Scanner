@@ -41,7 +41,7 @@ def check_for_update():
         content = http.read()
         scan = urllib2.urlopen('https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/scanner.py',data=None)
         reader = scan.read()
-        scanner = open('scanner.py').read()
+        scanner = open('scanner.py','r').read()
         read = open('.version.txt','r').read()
         if read == content:
             print '[#] No updates available.'
