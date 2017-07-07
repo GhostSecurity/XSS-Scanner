@@ -98,8 +98,8 @@ def XSSFind(path):
                     else:
                         print(Fore.GREEN+"[{}] [NEXT] URL [{}] ".format(strftime("%H:%M:%S", gmtime()), link))
 
-            raw_input(Fore.YELLOW+"\n[{}] [RETRY] [PRESS ENTER TO RETRY]".format(strftime("%H:%M:%S", gmtime())))
-            print(Fore.GREEN+"\n[!] Ended at [{}]".format(strftime("%H:%M:%S", gmtime())))
+            raw_input(Fore.YELLOW+"[{}] [RETRY] [PRESS ENTER TO RETRY]".format(strftime("%H:%M:%S", gmtime())))
+            print(Fore.GREEN+"[!] Ended at [{}]".format(strftime("%H:%M:%S", gmtime())))
 
     except Exception as err:
         print err
