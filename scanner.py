@@ -35,7 +35,7 @@ def Welcome():
     print(Fore.BLUE+"+-----------------------------------------------------------+")
     print(Fore.RED+"|           Created By - GhostSecurity Team                 |")
     print(Fore.RED+"|           Contact Us: http://ghost-sec.org                |")
-    print(Fore.BLUE+"+------------------------------------------------------------+")
+    print(Fore.BLUE+"+-----------------------------------------------------------+")
     print("\n")
 
 def check_for_update():
