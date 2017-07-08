@@ -33,19 +33,19 @@ def Welcome():
     print(Fore.GREEN+"|                       Enjoy it!                           |")
     print(Fore.BLUE+"+-----------------------------------------------------------+")
     print(Fore.RED+"|           Created By - GhostSecurity Team                 |")
-    print(Fore.RED+"|           Contact Us: http://ghost-sec.org                |")
+    print(Fore.RED+"|           Contact Us - http://ghost-sec.org               |")
     print(Fore.BLUE+"+-----------------------------------------------------------+")
     print("\n")
 
 def check_for_update():
-    admin_github_url = "https://github.com/HydraBoy/XSS-Scanner"
+    admin_github_url = "https://github.com/GhostSecurity/XSS-Scanner"
     updated = False
     print(Fore.GREEN+"[{}] [UPDATE] 'Checking For Updates And Debuging...'".format(strftime("%H:%M:%S", gmtime())))
     time.sleep(1)
     try:
-        http = urllib2.urlopen('https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/.version.txt',data=None)
+        http = urllib2.urlopen('https://raw.githubusercontent.com/GhostSecurity/XSS-Scanner/master/.version.txt',data=None)
         content = http.read()
-        scan = urllib2.urlopen('https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/scanner.py',data=None)
+        scan = urllib2.urlopen('https://raw.githubusercontent.com/GhostSecurity/XSS-Scanner/master/scanner.py',data=None)
         reader = scan.read()
         scanner = open('scanner.py','r').read()
         read = open('.version.txt','r').read()
@@ -56,14 +56,14 @@ def check_for_update():
                 time.sleep(1)
                 print(Fore.BLUE+"[{}] [DEBUG] 'Debuging XSS-Scanner Tool...'".format(strftime("%H:%M:%S", gmtime())))
                 os.popen('rm -rf scanner.py')
-                urllib.urlretrieve("https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/scanner.py","scanner.py")
+                urllib.urlretrieve("https://raw.githubusercontent.com/GhostSecurity/XSS-Scanner/master/scanner.py","scanner.py")
                 print(Fore.BLUE+"[{}] [DEBUG] 'Debug Complated'".format(strftime("%H:%M:%S", gmtime())))
                 sys.exit(Fore.YELLOW+"[{}] [RELAUNCH] 'Plase Relaunch The Script.'".format(strftime("%H:%M:%S", gmtime())))
         else:
             print(Fore.GREEN+"[{}] [UPDATE] 'Updating XSS-Scanner Tool...'".format(strftime("%H:%M:%S", gmtime())))
             os.popen('rm -rf .version.txt;rm -rf scanner.py')
-            urllib.urlretrieve("https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/scanner.py","scanner.py")
-            urllib.urlretrieve("https://raw.githubusercontent.com/HydraBoy/XSS-Scanner/master/.version.txt",".version.txt")
+            urllib.urlretrieve("https://raw.githubusercontent.com/GhostSecurity/XSS-Scanner/master/scanner.py","scanner.py")
+            urllib.urlretrieve("https://raw.githubusercontent.com/GhostSecurity/XSS-Scanner/master/.version.txt",".version.txt")
             print(Fore.GREEN+"[{}] [UPDATED] XSS Scanner Updated To Version: ".format(strftime("%H:%M:%S", gmtime())))
             updated = True
     except Exception as ex:
